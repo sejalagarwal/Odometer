@@ -24,7 +24,7 @@ class Ideone
 		
 		for(int i=curr-1;i>=minR;i--)
 		{
-			if(isValid(i))
+			if(isAscending(i))
 				return i;
 		}
 	}	
@@ -38,6 +38,31 @@ class Ideone
 	}
 	
 	
+			
+	public static int getNext(int curr)
+	{
+		int dig = countDig(curr);
 		
+		int maxR= getMax(dig);
+		
+		if(curr==maxR)
+			return getMin(dig);
+		
+		
+		for(int i=curr+1;i<=maxR;i++)
+		{
+			if(isAscending(i))
+				return i;
+		}
+	}	
+	
+	public static void main getNthNext(int curr, int n)
+	{
+		for(i=1;i<=n;i++)
+			curr=getNext(curr);
+		
+		return curr;
+	}
+	
 	}
 }
