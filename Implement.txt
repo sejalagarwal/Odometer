@@ -1,0 +1,56 @@
+
+class Odometer {
+
+	static boolean isAscending(int num)
+	{
+		while(num>0)
+		{
+			int dig=num%10;
+			num/=10;
+			if(num%10>dig || dig==0)
+				return false;
+		}
+		return true;
+	}
+	
+	static int Diff(int low,int high)
+	{
+		int next=low,count=0;
+		while(next!=high)
+		{
+			next=getNext(next);
+			count++;
+		}
+		return count;
+	}
+	static int getMin(int numOfDig)
+	{
+		int c=1,min=0;
+		while(c<=numOfDig)
+		{
+			min=min*10+c;
+			c++;
+		}
+		return min;
+	}
+	static int getMax(int numOfDig)
+	{
+		int c=9-numOfDig+1,max=0;
+		while(c<=9)
+		{
+			max=max*10+c;
+			c++;
+		}
+		return max;
+	}
+	static int countDig(int num)
+	{
+		int count=0;
+		while(num>0)
+		{
+			num/=10;
+			count++;
+		}
+		return count;
+	}
+}
