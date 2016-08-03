@@ -1,0 +1,25 @@
+public class Difference {
+
+	static boolean isAscending(int num)
+	{
+		while(num>0)
+		{
+			int dig=num%10;
+			num/=10;
+			if(num%10>dig || dig==0)
+				return false;
+		}
+		return true;
+	}
+	
+	static int Diff(int low,int high)
+	{
+		int next=low,count=0;
+		while(next!=high)
+		{
+			next=getNext(next);
+			count++;
+		}
+		return count;
+	}
+}
