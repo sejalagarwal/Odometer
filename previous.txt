@@ -1,0 +1,43 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+	}
+	
+	public static int getPrevious(int curr)
+	{
+		int dig = countDig(curr);
+		
+		int minR= getMin(dig);
+		
+		if(curr==minR)
+			return getMax(dig);
+		
+		
+		for(int i=curr-1;i>=minR;i--)
+		{
+			if(isValid(i))
+				return i;
+		}
+	}	
+	
+	public static void main getNthPrevious(int curr, int n)
+	{
+		for(i=1;i<=n;i++)
+			curr=getPrevious(curr);
+		
+		return curr;
+	}
+	
+	
+		
+	}
+}
